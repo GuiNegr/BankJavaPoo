@@ -101,12 +101,18 @@ public class Main {
         }
 
     }
-    public static void pagamento(int resp) throws  Exception{
+
+    public static void pagamento(int resp) throws Exception {
         System.out.println("INFORME O TIPO DA CONTA PARA PAGAR OP: \nAGUA \nLuz \n CARTÃO DE CREDITO \nInternet");
         String tipo = ler.next();
-        for(int i = 0; i < conta.length;i++){
-            if(conta[i].getNumero() == resp){
-                conta[i].pagamento(tipo);
+        for (int i = 0; i < conta.length; i++) {
+            if (conta[i].getNumero() == resp) {
+                try {
+                    conta[i].pagamento(tipo);
+                } catch (Exception e) {
+                    System.out.println(e.getMessage());
+                }
+
             }
         }
     }
