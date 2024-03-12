@@ -76,5 +76,18 @@ public class Conta {
         }
 
     }
+    public void pagamento(String tipo) throws Exception{
+        if(tipo.equalsIgnoreCase("agua")){
+            this.saldo -= 150;
+        } else if (tipo.equalsIgnoreCase("Luz")) {
+            this.saldo -= 75;
+        } else if (tipo.equalsIgnoreCase("internet")) {
+            this.saldo -= 200;
+        }else if (tipo.equalsIgnoreCase("credito")) {
+            this.saldo -= 800;
+        }else {
+            throw new Exception("ERRO SALDO INSUFICIENTE PARA PAGAR A CONTA DE "+tipo.toUpperCase());
+        }
+    }
 }
 

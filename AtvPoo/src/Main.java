@@ -49,7 +49,7 @@ public class Main {
                 } else if (respperg.equalsIgnoreCase("INFORMAÇÕES")) {
                     String a = conta[i].toString();
                     System.out.println(a);
-                }else if(respperg.equalsIgnoreCase("TRANSFERENCIA")){
+                } else if (respperg.equalsIgnoreCase("TRANSFERENCIA")) {
                     transferencia(resp);
                 }
                 break;
@@ -88,7 +88,7 @@ public class Main {
         }
         for (int i = 0; i < conta.length; i++) {
             if (resper == conta[i].getNumero()) {
-                 pagador = conta[i];
+                pagador = conta[i];
                 break;
             }
         }
@@ -100,5 +100,14 @@ public class Main {
             System.out.println(e.getMessage());
         }
 
+    }
+    public static void pagamento(int resp) throws  Exception{
+        System.out.println("INFORME O TIPO DA CONTA PARA PAGAR OP: \nAGUA \nLuz \n CARTÃO DE CREDITO \nInternet");
+        String tipo = ler.next();
+        for(int i = 0; i < conta.length;i++){
+            if(conta[i].getNumero() == resp){
+                conta[i].pagamento(tipo);
+            }
+        }
     }
 }
