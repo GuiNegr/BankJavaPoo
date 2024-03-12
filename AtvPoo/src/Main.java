@@ -1,4 +1,3 @@
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Main {
@@ -79,7 +78,7 @@ public class Main {
 
     public static void transferencia(int resper) throws Exception {
         Conta ajudante = new Conta();
-        System.out.println("INFORME O DO NUMERO DA CONTA PRA ONDE IRÁ REALIZAR A TRANSFERENCIA");
+        System.out.println("INFORME O NUMERO DA CONTA PRA ONDE IRÁ REALIZAR A TRANSFERENCIA");
         int resp = ler.nextInt();
         for (int i = 0; i < conta.length; i++) {
             if (resp == conta[i].getNumero()) {
